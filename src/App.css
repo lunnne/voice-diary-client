@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=Karla:wght@200;400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,200;0,400;1,200;1,400&display=swap');
+:root {
+  --color-white: #f9fafa;
+  --color-black: #141518;
+  --color-blue: #1a9ff0;
+  --color-darkBlue: #073d5d;
+  --color-grey: #dee0e0;
+  --color-darkGrey: #969696;
+  --color-red: #cc473d;
+  --color-green: #7aa300;
+  --color-yellow: #fff6b0;
+  --color-shadow: rgba(0, 0, 0, 0.2);
+  --size-avatar: 50px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  color: #343433;
+
+}
+
+body { 
+  font-family: 'Karla', sans-serif;
+  background-color: #f2f1ed;
+  color: #343433;
+}
+
+.home {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.main-text {
+  font-family: 'Crimson Pro', serif;
+  font-style: italic;
+  font-size: 3rem;
+  font-weight: 200;
+  transform: translateY(-3rem);
+  margin-bottom: 5rem;
+}
+
+.hug {
+  width: 4.5em;
+  height: 4.5em;
+  margin-bottom: 3rem;
+}
+
+.avatar-container {
+display: flex;
+flex-direction: column;
+align-items: center;
+}
+
+
+.avatar-txt {
+  width: var(--size-avatar);
+  height: var(--size-avatar);
+  background-color: var(--color-yellow);
+  border-style: solid 2px black;
+  border-radius: 50%;
+  text-align: center;
+  font-size: 2rem;
+  font-weight: bold;
+  line-height: var(--size-avatar);
+}
+
+
+#main-btn {
+    width: 20%;
+    font-size: 1.2rem;
+    padding: 0.8rem;
+    border-radius: 99em;
+    background-color: #343433;
+    color: #f2f1ed;
+}
+
+
