@@ -10,7 +10,7 @@ const ShowRecording = (props) => {
   const handleDelete = (id) => {
     console.log(id);
     axios
-    .delete(`${process.env.API_URL}/api/mydiary/${id}`)
+    .delete(`https://record-diary.herokuapp.com/api/mydiary/${id}`)
     .then((response) => {
        console.log(response.data);
      

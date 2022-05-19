@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_URL = `${process.env.API_URL}/auth`;
+const API_URL = `https://record-diary.herokuapp.com/api/auth`;
 
 const signup = (username, email, password) => {
   return axios
