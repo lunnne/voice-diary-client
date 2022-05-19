@@ -38,7 +38,7 @@ const AddRecording = ({ isOpen, onClose, setlistOfRecordings, listOfRecordings }
 
     axios({
       method: 'post',
-      url: 'http://localhost:5005/api/mydiary/create',
+      url: `${process.env.API_URL}/api/mydiary/create`,
       data: formData,
       headers: { 'Content-Type': 'multipart/form-data' },
     })

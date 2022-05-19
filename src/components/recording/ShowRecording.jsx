@@ -13,7 +13,7 @@ const ShowRecording = (props) => {
   const handleDelete = (id) => {
     console.log(id);
     axios
-    .delete(`http://localhost:5005/api/mydiary/${id}`)
+    .delete(`${process.env.API_URL}/api/mydiary/${id}`)
     .then((response) => {
        console.log(response.data);
      

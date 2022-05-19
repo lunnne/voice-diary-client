@@ -37,7 +37,7 @@ const Calendar = (props) => {
     let uploadMinute = uploadTime.split(':')[1];
 
     axios({
-      url: `http://localhost:5005/api/mydiary/${id}`, //your url
+      url: `${process.env.API_URL}/api/mydiary/${id}`, //your url
       method: 'GET',
       responseType: 'blob', // important
     })
