@@ -65,7 +65,7 @@ const Calendar = (props) => {
 
   useEffect(() => {
     axios
-      .get('http://localhost:5005/api/mydiary')
+      .get('https://record-diary.herokuapp.com/api/mydiary')
       .then((response) => {
         const recordings = response.data;
         setListOfRecordings(recordings);
