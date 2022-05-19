@@ -71,7 +71,7 @@ const AddRecording = ({ isOpen, onClose, setlistOfRecordings, listOfRecordings }
               <AiIcons.AiFillAudio />
             </div>
 
-          { status == 'stopped' &&
+          { status === 'stopped' &&
             <div className="audio-container">
               <audio src={mediaBlobUrl} controls />
             </div>

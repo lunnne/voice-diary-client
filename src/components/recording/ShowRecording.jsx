@@ -1,8 +1,5 @@
-import { useReactMediaRecorder } from 'react-media-recorder';
-import React, { useEffect, useStatem } from 'react';
-import { Routes, Route, useNavigate } from 'react-router-dom';
+import React from 'react';
 import Modal from 'react-modal';
-import * as AiIcons from 'react-icons/ai';
 import './Recording.css';
 import axios from 'axios';
 
