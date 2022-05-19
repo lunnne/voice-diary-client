@@ -6,6 +6,7 @@ import TypeWriter from './TypeWriter';
 const Home = ({currentUser}) => {
   return (
     <div className="home">
+      {currentUser && <p className='greeting-user'>Hi,{currentUser.username}</p> }
       <h1 className='main-text'><TypeWriter text={`"Keep a diary, 
       and someday it'll keep you."`}/></h1>
       
