@@ -60,9 +60,9 @@ const Signup = () => {
             onChange={(e) => setPassword(e.target.value)}
           />
         </div>
-        <button className="submit-btn" type="submit">
-          Register
-        </button>
+        <div className="form-group">
+          <button type="submit">Register</button>
+        </div>
         <p>
           <Link to={'/auth/login'}>Already have an account?</Link>
         </p>
