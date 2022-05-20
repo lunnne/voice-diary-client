@@ -3,6 +3,8 @@ import Modal from 'react-modal';
 import './Recording.css';
 import axios from 'axios';
 import pen from '../pen.png'
+import stars from '../stars.png'
+
 
 
 
