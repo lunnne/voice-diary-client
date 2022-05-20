@@ -2,6 +2,8 @@ import React from 'react';
 import Modal from 'react-modal';
 import './Recording.css';
 import axios from 'axios';
+import flower from '../flower.png'
+
 
 const ShowRecording = (props) => {
 
