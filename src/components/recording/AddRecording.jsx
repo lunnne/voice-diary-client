@@ -55,8 +55,6 @@ const AddRecording = ({ isOpen, onClose, setlistOfRecordings, listOfRecordings }
       style={{
         overlay: {
           position: 'fixed',
-          width:'100vw',
-          height:'100vh',
           backgroundColor: '#f2f1ed',
           zIndex: 20,
         },
@@ -66,73 +64,81 @@ const AddRecording = ({ isOpen, onClose, setlistOfRecordings, listOfRecordings }
           left: '50%',
           transform: 'translate(-50%, -50%)',
           width: '50%',
-          height: '90%',
+          height: '80%',
           border: '2px solid #444444',
-          background: '#f5f5f5',
+          background: '#FAF9F5',
           // overflow: 'hidden',
           borderRadius: '2rem',
           outline: 'none',
         },
       }}
     >
-      <div className="main-container">
-        <form encType="multipart/form-data" onSubmit={handleSubmit}>
-          <div className="inner-container">
-            <Datetime
-              timeFormat={false}
-              name="date"
-              inputProps={{
-                style: {
-                  fontFamily: 'Quantico',
-                  fontWeight: 700,
-                  fontSize: 35,
-                  height: '50px',
-                  background: 'none',
-                  border: 'none',
-                },
-              }}
-              value={date}
-              onChange={(date) => setDate(date)}
-            />
-            <section className="question-container">
-              <h1>"What flower do you like most?"</h1>
-            </section>
+      <form className="main-container" encType="multipart/form-data" onSubmit={handleSubmit}>
+        <Datetime
+          timeFormat={false}
+          name="date"
+          inputProps={{
+            style: {
+              fontFamily: 'Quantico',
+              fontWeight: 700,
+              fontSize: 30,
+              height: '3rem',
+              background: 'none',
+              border: 'none',
+            },
+          }}
+          value={date}
+          onChange={(date) => setDate(date)}
+        />
+        <section className="question-container form-group">
+          <h1>"What flower do you like most?"</h1>
+        </section>
 
-            <div className="status-btn">
-              <AiIcons.AiFillAudio />
-            </div>
-
-            {status === 'stopped' && (
-              <div className="audio-container">
-                <audio src={mediaBlobUrl} controls />
-              </div>
-            )}
-            <div className="form-group">
-              <input
-                type="text"
-                name="title"
-                id="title-text"
-                value={title}
-                onChange={(e) => setTitle(e.target.value)}
-                placeholder="Title"
-              />
-            </div>
-
-            <div className="btn-container form-group">
-              <button className="start-btn" type="button" style={{fontSize : '1rem'}} onClick={startRecording}>
-                Start
-              </button>
-              <button className="stop-btn" type="button" style={{fontSize : '1rem'}} onClick={stopRecording}>
-                Stop
-              </button>
-            </div>
-
-            <button id="submit-btn" style={{ background: 'none' }}  type="submit">
-          <img src={airplain} alt="stars" style={{ width : '50%'}}/>
-            </button>
+        <div className="form-group">
+          <div className="status-btn">
+            <AiIcons.AiFillAudio />
           </div>
-        </form>
-      </div>
+        </div>
+
+        {status === 'stopped' && (
+          <div className="audio-container">
+            <audio src={mediaBlobUrl} controls />
+          </div>
+        )}
+        <div className="form-group">
+          <input
+            type="text"
+            name="title"
+            id="title-text"
+            value={title}
+            onChange={(e) => setTitle(e.target.value)}
+            placeholder="Title"
+          />
+        </div>
+
+        <div className="btn-container form-group">
+          <button
+            className="start-btn"
+            type="button"
+            style={{ fontSize: '1rem' }}
+            onClick={startRecording}
+          >
+            Start
+          </button>
+          <button
+            className="stop-btn"
+            type="button"
+            style={{ fontSize: '1rem' }}
+            onClick={stopRecording}
+          >
+            Stop
+          </button>
+        </div>
+
+        <button id="submit-btn" style={{ background: 'none' }} type="submit">
+          <img src={airplain} alt="stars" style={{ width: '50%' }} />
+        </button>
+      </form>
     </Modal>
   );
 };

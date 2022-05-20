@@ -16,10 +16,4 @@ export const SidebarData = [
         icon: <FaIcons.FaBookOpen/>,
         cName : 'nav-text'
     },
-    {
-        title: 'Our Diary',
-        path:'/',
-        icon: <IoIcons.IoMdPeople/>,
-        cName : 'nav-text'
-    },
 ]

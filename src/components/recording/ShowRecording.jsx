@@ -2,7 +2,8 @@ import React from 'react';
 import Modal from 'react-modal';
 import './Recording.css';
 import axios from 'axios';
-import flower from '../flower.png'
+import pen from '../pen.png'
+
 
 
 const ShowRecording = (props) => {
@@ -44,7 +45,7 @@ const ShowRecording = (props) => {
         width: '35%',
         height: '55%',
         border: '2px solid #444444',
-        background: '#f5f5f5',
+        background: '#FAF9F5',
         // overflow: 'hidden',
         borderRadius: '2rem',
         outline: 'none',
@@ -57,12 +58,12 @@ const ShowRecording = (props) => {
       <hr className='text-line'/>
       </div>
       <div className="text-group" id="show-title">
-        <img src={flower} alt="stars" style={{ width : '10%',marginRight: '1rem'}}/>
+        <img src={pen} alt="stars" style={{ width : '10%', marginRight: '1rem'}}/>
          {title}
       </div>
       <audio className='text-group' src={url} controls />
       <p className='text-group' style={{fontFamily :'Caveat Brush' }}>
-      {/* <img src={stars} alt="stars" style={{ width : '7%', marginRight: '5px'}}/> */}
+      <img src={stars} alt="stars" style={{ width : '7%', marginRight: '5px'}}/>
         Create at : {uploadDate} {uploadTime}
       </p>
       <button onClick={handleDelete} type='submit' className="delete-btn">

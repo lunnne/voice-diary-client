@@ -15,7 +15,7 @@ const Navbar = (props) => {
 
   return (
     <>
-      <IconContext.Provider value={{ color: 'red' }}>
+      <IconContext.Provider value={{ color: '#343434' }}>
         <div className="navbar">
           <div className="menu-bars">
             <FaIcons.FaBars onClick={showSidebar} />
@@ -32,7 +32,7 @@ const Navbar = (props) => {
             {currentUser && <Avatar name={currentUser.username} />}
 
             {currentUser ? (
-              <a href="/" className="nav-text link" onClick={logOut}>
+              <a href="/" className="nav-link" onClick={logOut}>
                 Logout
               </a>
             ) : (

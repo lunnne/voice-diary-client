@@ -86,7 +86,7 @@ const Calendar = (props) => {
 
   return (
     <section className="main-calendar">
-      <div className="full-calendar">
+      <div id="full-calendar">
         <FullCalendar
           plugins={[dayGridPlugin, listPlugin]}
           headerToolbar={{
@@ -96,7 +96,7 @@ const Calendar = (props) => {
           }}
           initialView="dayGridMonth"
           events={calendar_list}
-          eventColor="#E1C0FF"
+          eventColor="#DDBED0"
           eventClick={(info) => {
             openModal(info.event.id);
           }}
