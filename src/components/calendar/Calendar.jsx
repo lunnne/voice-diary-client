@@ -75,12 +75,7 @@ const Calendar = (props) => {
       });
   }, []);
 
-  const deleteEvent = (updatedEvent) => {
-    setListOfRecordings(updatedEvent);
-  };
-
-  console.log(listOfRecordings);
-
+  
   calendar_list = listOfRecordings.map((data) => {
     let title = data.filename.split('|')[0];
     let date = data.filename.split('|')[1];
@@ -135,7 +130,8 @@ const Calendar = (props) => {
         id={id}
         url={url}
         isOpen={eventModalOpen}
-        deleteEvent={deleteEvent}
+        listOfRecordings={listOfRecordings}
+        setListOfRecordings={setListOfRecordings}
         onClose={() => setEventmodalOpen(false)}
       />
     </section>
