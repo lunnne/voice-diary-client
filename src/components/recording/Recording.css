@@ -1,8 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Quantico:ital,wght@1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Caveat+Brush&display=swap');
+
+
 button {
     border-style: none;
 }
 
-.main-content {
+.main-container {
+    padding: 1rem ;
+}
+
+.inner-container {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -10,33 +18,33 @@ button {
 }    
 
 .question-container {
-    margin: 5rem 0 0 0;
+    margin: 3rem 0 0 0;
    
 }
 
-.question-container p {
+/* .question-container p {
     font-family: 'Crimson Pro', serif;
-    font-size: 1.5rem;
+    font-size: 1rem;
     font-weight: 400;
-    margin-bottom: 2rem;
-}
+    margin-bottom: 1rem;
+} */
 
 .question-container h1 {
     font-family: 'Crimson Pro', serif;
     font-style: italic;
-    font-size: 2.5rem;
+    font-size: 2.2rem;
     font-weight: 200;
 }
 
 .status-btn {
-    width: 8rem;
-    height: 8rem;
+    width: 6rem;
+    height: 6rem;
     margin: 3rem;
     border-radius: 50%;
     background-color: #dadad6;
     display: grid;
     place-items: center;
-    font-size: 2.5em;
+    font-size: 2em;
     z-index: 10;
 }
 
@@ -62,21 +70,11 @@ button {
 
 .btn-container button {
  background-color: white;
+ width: 6rem;
  margin : 0 3rem;
  padding: 1rem 2rem;
  border-radius: 99rem;
- 
 }
-
-.submit-btn {
-    background-color: #c07777;
-    padding: 1rem 8rem;
-    border-radius: 99rem;
-    margin-top: 2rem;
-}
-
-
-
 
 .start-btn::before,
 .start-btn::after {
@@ -85,3 +83,62 @@ button {
     bottom: 0;
 
 }
+
+.show-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem 0;
+}
+
+#title-text {
+    border-radius: 0;
+    height: 50px;
+    width: 400px;
+    border-style: dashed;
+    border-width: 3px;
+}
+
+
+#submit-btn {
+    width: 8rem;
+}
+
+.text-group {
+    margin-bottom: 1rem;
+}
+
+#date-text {
+    font-family: 'Quantico', sans-serif;
+    font-weight: 700;
+    font-size: 2rem;
+}
+
+hr.text-line {
+    width: 100%;
+    border-top-color: #444;
+    border-top-style: dashed;
+    border-top-width: 4px;
+}
+
+#show-title {
+    font-size: 2rem;
+    font-family: 'Caveat Brush', cursive;
+}
+
+button.delete-btn {
+    display: block;
+    padding: 10px 15px;
+    border-radius: 99em;
+    background-color: #444;
+    box-shadow: 0px 0px 0px rgba(219, 155, 155, 0);
+    transition: 0.4s;
+    color: var(--color-lightgrey);
+    cursor: pointer;
+}
+  
+  form button[type='submit']:hover {
+    background-color: var(--color-darkgrey);
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+  }
+  

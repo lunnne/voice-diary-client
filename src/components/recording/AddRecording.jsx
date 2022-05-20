@@ -51,55 +51,87 @@ const AddRecording = ({ isOpen, onClose, setlistOfRecordings, listOfRecordings }
       isOpen={isOpen}
       onRequestClose={onClose}
       ariaHideApp={false}
-      style={{ overlay: { zIndex: 20 }, content: { background: '#f2f1ed', padding: '50px' } }}
+      style={{
+        overlay: {
+          position: 'fixed',
+          width:'100vw',
+          height:'100vh',
+          backgroundColor: '#f2f1ed',
+          zIndex: 20,
+        },
+        content: {
+          position: 'absolute',
+          top: '50%',
+          left: '50%',
+          transform: 'translate(-50%, -50%)',
+          width: '50%',
+          height: '90%',
+          border: '2px solid #444444',
+          background: '#f5f5f5',
+          // overflow: 'hidden',
+          borderRadius: '2rem',
+          outline: 'none',
+        },
+      }}
     >
-      <form encType="multipart/form-data" onSubmit={handleSubmit}>
-        <div className="main-content">
-          <Datetime
-            timeFormat={false}
-            name="date"
-            inputProps={{ style: { width: '200px', height: '30px' } }}
-            value={date}
-            onChange={(date) => setDate(date)}
-          />
-          <section className="question-container">
-            <h1>"What flower do you like most?"</h1>
-          </section>
+      <div className="main-container">
+        <form encType="multipart/form-data" onSubmit={handleSubmit}>
+          <div className="inner-container">
+            <Datetime
+              timeFormat={false}
+              name="date"
+              inputProps={{
+                style: {
+                  fontFamily: 'Quantico',
+                  fontWeight: 700,
+                  fontSize: 35,
+                  height: '50px',
+                  background: 'none',
+                  border: 'none',
+                },
+              }}
+              value={date}
+              onChange={(date) => setDate(date)}
+            />
+            <section className="question-container">
+              <h1>"What flower do you like most?"</h1>
+            </section>
 
-          
             <div className="status-btn">
               <AiIcons.AiFillAudio />
             </div>
 
-          { status === 'stopped' &&
-            <div className="audio-container">
-              <audio src={mediaBlobUrl} controls />
+            {status === 'stopped' && (
+              <div className="audio-container">
+                <audio src={mediaBlobUrl} controls />
+              </div>
+            )}
+            <div className="form-group">
+              <input
+                type="text"
+                name="title"
+                id="title-text"
+                value={title}
+                onChange={(e) => setTitle(e.target.value)}
+                placeholder="Title"
+              />
             </div>
-          }
-          <input
-            type="text"
-            name="title"
-            className="title-input"
-            value={title}
-            onChange={(e) => setTitle(e.target.value)}
-            placeholder="Title"
-          />
 
-          <div className="btn-container">
-            <button className="start-btn" type="button" onClick={startRecording}>
-              Start
-            </button>
-            <button className="stop-btn" type="button" onClick={stopRecording}>
-              Stop
+            <div className="btn-container form-group">
+              <button className="start-btn" type="button" style={{fontSize : '1rem'}} onClick={startRecording}>
+                Start
+              </button>
+              <button className="stop-btn" type="button" style={{fontSize : '1rem'}} onClick={stopRecording}>
+                Stop
+              </button>
+            </div>
+
+            <button id="submit-btn" style={{ background: 'none' }}  type="submit">
+          <img src={airplain} alt="stars" style={{ width : '50%'}}/>
             </button>
           </div>
-
-          <button className="submit-btn" type="submit">
-            {' '}
-            submit{' '}
-          </button>
-        </div>
-      </form>
+        </form>
+      </div>
     </Modal>
   );
 };
