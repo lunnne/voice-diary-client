@@ -15,7 +15,7 @@ const Login = () => {
         (response) => {
           // check for token and user already exists with 200
           console.log('Sign up successfully', response);
-          navigate('/');
+          navigate('/mydiary');
           window.location.reload();
         },
         (error) => {
