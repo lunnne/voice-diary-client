@@ -1,5 +1,5 @@
 import { useReactMediaRecorder } from 'react-media-recorder';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import moment from 'moment';
 import axios from 'axios';
 import Modal from 'react-modal';
@@ -14,7 +14,7 @@ const AddRecording = ({ isOpen, onClose, setlistOfRecordings, listOfRecordings }
   const [date, setDate] = useState(moment());
   const [quote, setQuote] = useState('');
 
-  const { status, startRecording, stopRecording, mediaBlobUrl } = useReactMediaRecorder({
+  const { status, startRecording, stopRecording, clearBlobUrl, mediaBlobUrl } = useReactMediaRecorder({
     audio: true,
     type: 'audio/wav',
   });
