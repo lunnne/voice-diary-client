@@ -6,24 +6,33 @@ import Modal from 'react-modal';
 import Datetime from 'react-datetime';
 import 'react-datetime/css/react-datetime.css';
 import * as AiIcons from 'react-icons/ai';
-import airplain from '../airplain.png'
+import airplain from '../airplain.png';
 import './Recording.css';
 
 const AddRecording = ({ isOpen, onClose, setlistOfRecordings, listOfRecordings }) => {
   const [title, setTitle] = useState('');
   const [date, setDate] = useState(moment());
+  const [quote, setQuote] = useState('');
 
   const { status, startRecording, stopRecording, mediaBlobUrl } = useReactMediaRecorder({
     audio: true,
     type: 'audio/wav',
   });
 
-  console.log(status);
+  useEffect(() => {
+    axios
+      .get('https://type.fit/api/quotes')
+      .then((response) => {
+        let randomNum = Math.floor(Math.random() * response.data.length);
+        setQuote(response.data[randomNum]);
+      })
+      .catch(function (error) {
+        console.error(error);
+      });
+  }, []);
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-
-    onClose();
 
     const audioBlob = await fetch(mediaBlobUrl).then((res) => res.blob());
 
@@ -45,6 +54,9 @@ const AddRecording = ({ isOpen, onClose, setlistOfRecordings, listOfRecordings }
     })
       .then((response) => setlistOfRecordings([...listOfRecordings, response.data]))
       .catch((err) => console.log(err));
+
+    clearBlobUrl();
+    onClose();
   };
 
   return (
@@ -67,7 +79,6 @@ const AddRecording = ({ isOpen, onClose, setlistOfRecordings, listOfRecordings }
           height: '80%',
           border: '2px solid #444444',
           background: '#FAF9F5',
-          // overflow: 'hidden',
           borderRadius: '2rem',
           outline: 'none',
         },
@@ -91,7 +102,8 @@ const AddRecording = ({ isOpen, onClose, setlistOfRecordings, listOfRecordings }
           onChange={(date) => setDate(date)}
         />
         <section className="question-container form-group">
-          <h1>"What flower do you like most?"</h1>
+          <h1>{quote.text}</h1>
+          <p>-{quote.author}</p>
         </section>
 
         <div className="form-group">

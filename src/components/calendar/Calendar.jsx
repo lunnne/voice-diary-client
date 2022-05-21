@@ -75,7 +75,6 @@ const Calendar = (props) => {
       });
   }, []);
 
-  
   calendar_list = listOfRecordings.map((data) => {
     let title = data.filename.split('|')[0];
     let date = data.filename.split('|')[1];
@@ -146,6 +145,8 @@ const AddBtn = styled.div`
 `;
 
 const Word = styled.span`
+  font-family: 'Karla';
+  font-weight: 600;
   color: black;
 `;
 

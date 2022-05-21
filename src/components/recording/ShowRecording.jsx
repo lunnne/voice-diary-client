@@ -5,9 +5,6 @@ import axios from 'axios';
 import pen from '../pen.png'
 import stars from '../stars.png'
 
-
-
-
 const ShowRecording = (props) => {
 
   const {isOpen, onClose, title, date, uploadDate, uploadTime, url, id, listOfRecordings, setListOfRecordings} =props

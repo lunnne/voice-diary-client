@@ -24,9 +24,19 @@ button {
 .question-container h1 {
     font-family: 'Crimson Pro', serif;
     font-style: italic;
-    font-size: 2.2rem;
+    font-size: 1.7rem;
+    font-weight: 200;
+    padding : 0 3rem;
+    margin-bottom: 1rem;
+}
+
+.question-container p {
+    font-family: 'Crimson Pro', serif;
+    font-style: italic;
+    font-size: 1.2rem;
     font-weight: 200;
 }
+
 
 .status-btn {
     width: 8rem;

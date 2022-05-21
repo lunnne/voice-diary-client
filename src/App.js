@@ -9,9 +9,6 @@ import Login from './components/auth/Login';
 import Signup from './components/auth/Signup'
 import AuthService from "./services/auth.service";
 
-
-
-
 function App() {
   
   const navigate = useNavigate();
@@ -39,7 +36,6 @@ function App() {
   return (
     <div className="App">
       <Navbar currentUser={currentUser} logOut={logOut}/>
-      
       
       <div>
         <Routes>
