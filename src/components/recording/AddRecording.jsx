@@ -19,16 +19,20 @@ const AddRecording = ({ isOpen, onClose, setlistOfRecordings, listOfRecordings }
     type: 'audio/wav',
   });
 
-  useEffect(() => {
+  const getQuote = () => {
     axios
-      .get('https://type.fit/api/quotes')
-      .then((response) => {
-        let randomNum = Math.floor(Math.random() * response.data.length);
-        setQuote(response.data[randomNum]);
-      })
-      .catch(function (error) {
-        console.error(error);
-      });
+    .get('https://type.fit/api/quotes')
+    .then((response) => {
+      let randomNum = Math.floor(Math.random()*response.data.length)
+      setQuote(response.data[randomNum])
+    })
+    .catch(function (error) {
+      console.error(error);
+    });
+  }
+
+  useEffect(() => {
+    getQuote();
   }, []);
 
   const handleSubmit = async (event) => {
@@ -54,7 +58,8 @@ const AddRecording = ({ isOpen, onClose, setlistOfRecordings, listOfRecordings }
     })
       .then((response) => setlistOfRecordings([...listOfRecordings, response.data]))
       .catch((err) => console.log(err));
-
+    
+    setTitle('')
     clearBlobUrl();
     onClose();
   };
@@ -147,7 +152,7 @@ const AddRecording = ({ isOpen, onClose, setlistOfRecordings, listOfRecordings }
           </button>
         </div>
 
-        <button id="submit-btn" style={{ background: 'none' }} type="submit">
+        <button onClick={getQuote} id="submit-btn" style={{ background: 'none' }} type="submit">
           <img src={airplain} alt="stars" style={{ width: '50%' }} />
         </button>
       </form>

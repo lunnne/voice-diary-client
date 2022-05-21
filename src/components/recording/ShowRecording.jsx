@@ -61,7 +61,7 @@ const ShowRecording = (props) => {
          {title}
       </div>
       <audio className='text-group' src={url} controls />
-      <p className='text-group' style={{fontFamily :'Caveat Brush' }}>
+      <p className='text-group' style={{fontFamily :'Caveat Brush', fontSize:'1rem' }}>
       <img src={stars} alt="stars" style={{ width : '7%', marginRight: '5px'}}/>
         Create at : {uploadDate} {uploadTime}
       </p>
