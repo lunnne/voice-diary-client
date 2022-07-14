@@ -4,7 +4,7 @@ import * as FaIcons from 'react-icons/fa';
 import * as AiIcons from 'react-icons/ai';
 import { IconContext } from 'react-icons/lib';
 import { SidebarData } from './SidebarData';
-import Avatar from '../Avatar';
+import Avatar from '../auth/Avatar';
 import './Navbar.css';
 
 const Navbar = (props) => {

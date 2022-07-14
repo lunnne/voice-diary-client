@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 import FullCalendar from '@fullcalendar/react'; // must go before plugins
 import dayGridPlugin from '@fullcalendar/daygrid'; // a plugin!
 import listPlugin from '@fullcalendar/list';
@@ -6,10 +7,8 @@ import Fab from '@material-ui/core/Fab';
 import AddIcon from '@material-ui/icons/Add';
 import AddRecording from '../recording/AddRecording';
 import styled from 'styled-components';
-import { useNavigate } from 'react-router-dom';
-import './Calendar.css';
-import axios from 'axios';
 import ShowRecording from '../recording/ShowRecording';
+import './Calendar.css';
 
 const Calendar = (props) => {
   const [modalOpen, setModalOpen] = useState(false);
@@ -21,9 +20,9 @@ const Calendar = (props) => {
   const [uploadTime, setUploadTime] = useState('');
   const [id, setId] = useState('');
   const [url, setUrl] = useState('');
-  const navigate = useNavigate();
   let calendar_list = [];
 
+  //Get one recording on the modal
   const openModal = (id) => {
     let daily_record = calendar_list.filter((record) => {
       if (record.id == id) {
@@ -47,22 +46,15 @@ const Calendar = (props) => {
       })
       .catch((err) => console.log(err));
 
-    // let day = "AM"
-    // if (hour >= 12){
-    //   day = "PM"
-    // }
-    // if(hour > 12){
-    //   hour = (hour-12)
-    // }
     setTitle(daily_record[0].title);
     setDate(daily_record[0].date);
     setUploadDate(uploadDate);
     setUploadTime(uploadHour + ':' + uploadMinute);
     setId(id);
-    // setDay(day)
     setEventmodalOpen(true);
   };
 
+  //Get all the recordings on the calendar
   useEffect(() => {
     axios
       .get('https://record-diary.herokuapp.com/api/mydiary')

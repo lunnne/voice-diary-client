@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import hug from './hug.png';
+import hug from '../../assets/hug.png';
 import TypeWriter from './TypeWriter';
 
 const Home = ({currentUser}) => {
