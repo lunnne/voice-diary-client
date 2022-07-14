@@ -34,7 +34,6 @@ const Signup = () => {
       <form onSubmit={handleSignup}>
         <h2>Sign up</h2>
         <div className="form-group">
-          {/* <label>Username</label> */}
           <input
             type="text"
             placeholder="username"
@@ -43,7 +42,6 @@ const Signup = () => {
           />
         </div>
         <div className="form-group">
-          {/* <label>Email</label> */}
           <input
             type="text"
             placeholder="email"
@@ -52,7 +50,6 @@ const Signup = () => {
           />
         </div>
         <div className="form-group">
-          {/* <label>Password</label> */}
           <input
             type="password"
             placeholder="password"
