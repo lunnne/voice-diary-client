@@ -6,7 +6,7 @@ import Modal from 'react-modal';
 import Datetime from 'react-datetime';
 import 'react-datetime/css/react-datetime.css';
 import * as AiIcons from 'react-icons/ai';
-import airplain from '../airplain.png';
+import airplain from '../../assets/airplain.png';
 import './Recording.css';
 
 const AddRecording = ({ isOpen, onClose, setlistOfRecordings, listOfRecordings }) => {
